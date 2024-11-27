@@ -34,6 +34,8 @@ ComfyJS.onCommand = (user, activator, msg, flags, extra) => {
     }
 }
 
+
+// probando el redeploy
 ComfyJS.onJoin = (user, self, extra) => {
     if (user === "recerybot") return;
 
