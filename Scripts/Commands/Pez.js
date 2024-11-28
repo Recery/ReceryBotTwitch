@@ -27,8 +27,7 @@ class Pez extends Command
         if (add_row)
             db.prepare("INSERT INTO promediopez (username, promedio) values (?, ?)").run(command_content.msg, promedio);
 
-        this.comfy.Say(`${command_content.user}, eres un ${porcentaje}% pez. 
-            En promedio eres un ${promedio} pez.`);
+        this.comfy.Say(`${command_content.user}, eres un ${porcentaje}% pez. En promedio eres un ${promedio} pez.`);
     }
 }
 
