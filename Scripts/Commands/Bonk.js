@@ -28,9 +28,9 @@ class Bonk extends Command
         }
 
         if (new_bonks > 1)
-            this.comfy.Say(`${command_content.user} bonkeó a ${command_content.msg} ${new_bonks} veces XD`);
+            this.comfy.Say(`${command_content.user} bonkeó a ${command_content.msg}. ${command_content.msg} fue bonkeado ${new_bonks} veces XD`);
         else
-            this.comfy.Say(`${command_content.user} bonkeó a ${command_content.msg} ${new_bonks} vez XD`);
+            this.comfy.Say(`${command_content.user} bonkeó a ${command_content.msg}. ${command_content.msg} fue bonkeado ${new_bonks} vez XD`);
     }
 }
 

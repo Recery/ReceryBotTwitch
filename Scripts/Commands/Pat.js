@@ -26,9 +26,9 @@ class Pat extends Command
             db.prepare("INSERT INTO pats (username, pats) VALUES (?, ?)").run(command_content.msg, new_pats);
 
         if (new_pats > 1)
-            this.comfy.Say(`${command_content.user} acarició la cabecita de ${command_content.msg} ${new_pats} veces!`);
+            this.comfy.Say(`${command_content.user} acarició la cabecita de ${command_content.msg}! ${command_content.msg} fue acariciad@ ${new_pats} veces!`);
         else
-            this.comfy.Say(`${command_content.user} acarició la cabecita de ${command_content.msg} ${new_pats} vez!`);
+            this.comfy.Say(`${command_content.user} acarició la cabecita de ${command_content.msg}! ${command_content.msg} fue acariciad@ ${new_pats} vez!`);
     }
 }
 
