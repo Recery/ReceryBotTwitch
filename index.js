@@ -35,6 +35,7 @@ ComfyJS.onCommand = (user, activator, msg, flags, extra) => {
 }
 
 ComfyJS.onJoin = (user, self, extra) => {
+    return;
     if (user === "recerybot") return;
 
     ComfyJS.Say(`¡Hola ${user}, bienvenid@ al stream! Usa !comandos para ver mi lista de comandos disponibles.`)
