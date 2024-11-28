@@ -5,7 +5,7 @@ class Clip extends Command
 {
     async execution(command_content)
     {
-        const url = `https://api.thefyrewire.com/twitch/clips/create/fcc76804b0b8bd62be0a9d189135cb1d?channel=${command_content.extra.channel}`;
+        const url = `${process.env.CLIP_API_URL}${command_content.extra.channel}`;
 
         try {
             const response = await fetch(url);
