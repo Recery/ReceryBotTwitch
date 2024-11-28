@@ -15,7 +15,7 @@ class Pez extends Command
 
         for (const row of rows)
         {
-            if (row.username === command_content.msg)
+            if (row.username === command_content.user)
             {
                 add_row = false;
 
