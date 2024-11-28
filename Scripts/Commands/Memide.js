@@ -29,7 +29,7 @@ class Memide extends Command
         if (promedio <= 10)
             this.comfy.Say(`${command_content.user}, te mide ${tamano}cm. En promedio te mide ${promedio}cm, tremendo pito corto XD`);
         else if (promedio <= 20)
-            this.comfy.Say(`${command_content.user}, te mide ${tamano}cm. En promedio te mide ${promedio}...`);
+            this.comfy.Say(`${command_content.user}, te mide ${tamano}cm. En promedio te mide ${promedio}cm...`);
         else
             this.comfy.Say(`${command_content.user}, te mide ${tamano}cm... En promedio te mide ${promedio}cm, donde escondes semejante bestia?!`);
     }
