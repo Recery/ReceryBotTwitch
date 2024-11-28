@@ -13,7 +13,7 @@ class Bonk extends Command
 
         for (const row of rows)
         {
-            if (row.username === command_content.msg)
+            if (row.username.toLowerCase() === command_content.msg.toLowerCase())
             {
                 add_row = false;
 
