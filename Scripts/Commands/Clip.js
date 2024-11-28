@@ -9,10 +9,10 @@ class Clip extends Command
 
         try {
             const response = await fetch(url);
-            const data = await response.text();
+            const clipurl = await response.text();
 
-            if (response.ok && data?.clipURL)
-                this.comfy.Say(`¡El clip ha sido creado! Este es el link: ${data.clipURL}`);
+            if (response.ok)
+                this.comfy.Say(`¡El clip ha sido creado! Este es el link: ${clipurl}`);
             else
                 this.comfy.Say("Hubo un error al generar el clip. XD");
         }
