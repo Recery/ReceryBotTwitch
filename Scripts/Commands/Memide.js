@@ -26,6 +26,7 @@ class Memide extends Command
         if (add_row)
             db.prepare("INSERT INTO promediomemide (username, promedio) VALUES (?, ?)").run(command_content.user, promedio)
 
+        promedio = Math.floor(promedio);
         if (promedio <= 10)
             this.comfy.Say(`${command_content.user}, te mide ${tamano}cm. En promedio te mide ${promedio}cm, tremendo pito corto XD`);
         else if (promedio <= 20)
