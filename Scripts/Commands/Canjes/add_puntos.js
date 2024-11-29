@@ -19,7 +19,6 @@ function add_points()
 
     for (const user of active_users)
     {
-        console.log(user);
         let add_row = true;
         for (const row of rows)
         {
