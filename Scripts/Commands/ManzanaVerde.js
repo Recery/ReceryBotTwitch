@@ -8,9 +8,10 @@ class Manzanaverde extends Command
     execution(command_content)
     {
         let rows = this.db.prepare("SELECT * FROM puntos").all();
-
+        console.log(command_content.user, " ejecuto esto")
         for (const row of rows)
         {
+            console.log(row.username)
             if (row.username === command_content.user)
             {
                 if (row.puntos > 0)
