@@ -3,6 +3,7 @@
     "better-sqlite3": "^11.6.0",
     "comfy.js": "^1.1.16",
     "dotenv": "^16.4.5",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "ws": "^8.18.0"
   }
 }
