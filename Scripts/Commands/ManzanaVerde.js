@@ -12,7 +12,7 @@ class Manzanaverde extends Command
         {
             // En este caso en especifico, el nombre tiene que estar todo en minuscula para compararlos
             // En la base de datos se guarda todo en minuscula y queremos compararlo con eso
-            if (row.username === command_content.user.toLowercase())
+            if (row.username === command_content.user.toLowerCase())
             {
                 if (row.puntos > 0)
                 {
