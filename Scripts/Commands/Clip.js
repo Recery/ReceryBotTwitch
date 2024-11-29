@@ -16,8 +16,7 @@ class Clip extends Command
             else
                 this.comfy.Say("Hubo un error al generar el clip. XD");
         }
-        catch (error)
-        {
+        catch (error) {
             console.error("Hubo un error al generar el clip: ", error);
             this.comfy.Say("Hubo un error tremendo al generar el clip.");
         }

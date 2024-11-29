@@ -1,7 +1,7 @@
 require('dotenv').config();
 const ComfyJS = require("comfy.js");
 const available_commands = require("./Scripts/available_commands.js");
-const timed_message = require("./Scripts/TimedMessage.js")
+const timed_message = require("./Scripts/TimedMessage.js");
 
 ComfyJS.onCommand = (user, activator, msg, flags, extra) => {
     let command_content = {user: user, activator: activator, msg: msg, flags: flags, extra: extra};
@@ -35,7 +35,6 @@ ComfyJS.onCommand = (user, activator, msg, flags, extra) => {
 }
 
 ComfyJS.onJoin = (user, self, extra) => {
-    return;
     if (user === "recerybot") return;
 
     ComfyJS.Say(`¡Hola ${user}, bienvenid@ al stream! Usa !comandos para ver mi lista de comandos disponibles.`)
@@ -51,3 +50,5 @@ ComfyJS.onConnected = (address, port, isFirstConnect) => {
 }
 
 ComfyJS.Init("ReceryBot", process.env.OAUTH, "Recery_");
+
+require("./Scripts/Commands/Canjes/add_puntos.js");
