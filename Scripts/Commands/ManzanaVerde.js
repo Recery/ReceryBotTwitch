@@ -1,5 +1,5 @@
 const DB = require("better-sqlite3");
-const Command = require("../command_cls");
+const Command = require("./command_cls");
 
 class Manzanaverde extends Command
 {
