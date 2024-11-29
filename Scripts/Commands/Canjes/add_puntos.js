@@ -19,6 +19,7 @@ function add_points()
 
     for (const user of active_users)
     {
+        console.log(user);
         let add_row = true;
         for (const row of rows)
         {
@@ -34,4 +35,4 @@ function add_points()
     }
 }
 
-setInterval(add_points, 300000);
+setInterval(add_points, 30000/*0*/);
