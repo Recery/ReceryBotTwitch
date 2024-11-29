@@ -8,11 +8,11 @@ class Manzanaverde extends Command
     execution(command_content)
     {
         let rows = this.db.prepare("SELECT * FROM puntos").all();
-        console.log(command_content.user, " ejecuto esto")
         for (const row of rows)
         {
-            console.log(row.username)
-            if (row.username === command_content.user)
+            // En este caso en especifico, el nombre tiene que estar todo en minuscula para compararlos
+            // En la base de datos se guarda todo en minuscula y queremos compararlo con eso
+            if (row.username === command_content.user.toLowercase())
             {
                 if (row.puntos > 0)
                 {
