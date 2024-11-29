@@ -34,4 +34,4 @@ function add_points()
     }
 }
 
-setInterval(add_points, 30000/*0*/);
+setInterval(add_points, 300000);
