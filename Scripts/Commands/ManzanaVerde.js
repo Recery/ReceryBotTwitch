@@ -7,7 +7,7 @@ class Manzanaverde extends Command
 
     execution(command_content)
     {
-        let rows = db.prepare("SELECT * FROM puntos").all();
+        let rows = this.db.prepare("SELECT * FROM puntos").all();
 
         for (const row of rows)
         {
