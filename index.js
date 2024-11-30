@@ -48,7 +48,7 @@ ComfyJS.onConnected = (address, port, isFirstConnect) => {
     const text = "Soy Recery Bot y estoy acá para hacerle el trabajo a mi papá Recery... Si querés conocer mis comandos, escribí !comandos. Usa !redes para apoyar a mi papá por todos lados.";
     timed_message.timed_message(text, 1800000);
 }
-
-ComfyJS.Init("ReceryBot", process.env.OAUTH, "Zahira_Magic125");
+//Zahira_Magic125
+ComfyJS.Init("ReceryBot", process.env.OAUTH, "Recery_");
 
 require("./Scripts/Commands/Canjes/add_puntos.js");
