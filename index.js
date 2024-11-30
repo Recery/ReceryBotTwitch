@@ -49,6 +49,6 @@ ComfyJS.onConnected = (address, port, isFirstConnect) => {
     timed_message.timed_message(text, 1800000);
 }
 
-ComfyJS.Init("ReceryBot", process.env.OAUTH, "Recery_");
+ComfyJS.Init("ReceryBot", process.env.OAUTH, "Zahira_Magic125");
 
 require("./Scripts/Commands/Canjes/add_puntos.js");
