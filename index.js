@@ -50,5 +50,3 @@ ComfyJS.onConnected = (address, port, isFirstConnect) => {
 }
 
 ComfyJS.Init("ReceryBot", process.env.OAUTH, "Recery_");
-
-require("./Scripts/Commands/Canjes/add_puntos.js");
