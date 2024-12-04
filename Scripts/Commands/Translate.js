@@ -14,7 +14,7 @@ class Translate extends Command
                 q: command_content.msg,
                 source: 'en',
                 target: 'es',
-                source: 'text',
+                format: 'text',
             }),
         });
 
