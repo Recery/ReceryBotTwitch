@@ -1,28 +1,21 @@
 const Command = require("./command_cls.js")
 
-const fetch = require("node-fetch")
+const Translatte = require("translatte")
 const libretranslate_url = 'https://libretranslate.com';
 
 class Translate extends Command
 {
     async execution(command_content)
     {
-        const response = await fetch(`${libretranslate_url}/translate`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                q: command_content.msg,
-                source: 'en',
-                target: 'es',
-                format: 'text',
-            }),
-        });
+        try {
+            const response = await Translatte(command_content.msg, {to: 'es'});
 
-        const data = await response.json();
-
-        if (data.error) this.comfy.Say(`Hubo un error: ${data.error}`);
-        else this.comfy.Say(`${data.translatedText}`);
-        
+            if (response && response.text) this.comfy.Say(`${response.text}`);
+            else this.comfy.Say("No se pudo traducir.");
+        }
+        catch (error) {
+            this.comfy.Say("Hubo este error al traducir: ", error);
+        }
     }
 }
 
