@@ -11,7 +11,7 @@ class Translate extends Command
         const target_lang = args[0];
         const text_to_translate = args.slice(1).join(' ');
 
-        if (target_lang !== 'en' || target_lang !== 'es')
+        if (target_lang !== 'en' && target_lang !== 'es')
         {
             this.comfy.Say("Please choose a valid language.");
             return;
