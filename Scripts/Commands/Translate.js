@@ -20,7 +20,9 @@ class Translate extends Command
 
         const data = await response.json();
 
-        this.comfy.Say(`${data.translatedText}`);
+        if (data.error) this.comfy.Say(`Hubo un error: ${data.error}`);
+        else this.comfy.Say(`${data.translatedText}`);
+        
     }
 }
 
