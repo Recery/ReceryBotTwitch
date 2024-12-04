@@ -1,7 +1,6 @@
 const Command = require("./command_cls.js")
 
 const Translatte = require("translatte")
-const libretranslate_url = 'https://libretranslate.com';
 
 class Translate extends Command
 {
