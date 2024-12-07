@@ -34,11 +34,13 @@ ComfyJS.onCommand = (user, activator, msg, flags, extra) => {
     }
 }
 
+/*
 ComfyJS.onJoin = (user, self, extra) => {
     if (user === "recerybot") return;
 
     ComfyJS.Say(`¡Hola ${user}, bienvenid@ al stream! Usa !comandos para ver mi lista de comandos disponibles.`)
 }
+*/
 
 ComfyJS.onRaid = (user, viewers, extra) => {
     ComfyJS.Say(`${user} acabó de traer a ${viewers} pecesitos para el cardumen! Vayan a seguirl@ en su canal: https://twitch.tv/${user}`);
