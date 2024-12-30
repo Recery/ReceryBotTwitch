@@ -8,7 +8,9 @@ class AddMuerte extends Command
         if (!command_content.flags.broadcaster && !command_content.flags.mod) return;
 
         let muertes = 1;
+        
         const juego = command_content.msg.toLowerCase();
+        const user = command_content.user;
 
         if (!juego) {
             this.comfy.Say(`${user}, debes ingresar el juego al que sumarle una muerte...`);
@@ -25,7 +27,7 @@ class AddMuerte extends Command
             db.prepare("UPDATE muertes SET amount = ? WHERE juego = ?").run(muertes, juego);
         }
 
-        this.comfy.Say(`${command_content.user}, se ha sumado una muerte en ${juego} a Recery. ¡Ahora tiene ${muertes} muertes!`);
+        this.comfy.Say(`${user}, se ha sumado una muerte en ${juego} a Recery. ¡Ahora tiene ${muertes} muertes!`);
 
     }
 }
