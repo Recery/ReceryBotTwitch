@@ -7,6 +7,7 @@ class Muertes extends Command
         // Comando para que los espectadores puedan ver las muertes en determinado juego
 
         const juego = command_content.msg.toLowerCase();
+        const user = command_content.user;
 
         if (!juego) {
             this.comfy.Say(`${user}, debes ingresar el juego del que deseas consultar las muertes...`);
@@ -17,11 +18,11 @@ class Muertes extends Command
         const row = db.prepare("SELECT amount FROM muertes WHERE juego = ?").get(juego);
 
         if (!row) {
-            this.comfy.Say(`${command_content.user}, no hay muertes en ese juego... ¿Incluso acaso es un juego eso?`);
+            this.comfy.Say(`${user}, no hay muertes en ese juego... ¿Incluso acaso es un juego eso?`);
             return;
         }
 
-        this.comfy.Say(`${command_content.user}, ¡Recery tiene ${row.muertes} en ${juego}!`);
+        this.comfy.Say(`${user}, ¡Recery tiene ${row.muertes} en ${juego}!`);
     }
 }
 
