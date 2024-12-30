@@ -4,29 +4,24 @@ const Command = require("./command_cls.js");
 class Muertes extends Command
 {
     execution(command_content) {
-        // Comando para que los mods o el streamer puedan agregar una muerte al contador
-        if (!command_content.flags.broadcaster && !command_content.flags.mod) return;
+        // Comando para que los espectadores puedan ver las muertes en determinado juego
 
-        let muertes = 1;
         const juego = command_content.msg.toLowerCase();
 
         if (!juego) {
-            this.comfy.Say(`${user}, debes ingresar el juego al que sumarle una muerte...`);
+            this.comfy.Say(`${user}, debes ingresar el juego del que deseas consultar las muertes...`);
             return;
-        } 
+        }
 
         const db = new DB(process.env.CONTADORES_DB_PATH);
         const row = db.prepare("SELECT amount FROM muertes WHERE juego = ?").get(juego);
 
-        if (!row)
-            db.prepare("INSERT INTO muertes (amount, juego) VALUES (?, ?)").run(1, juego);
-        else {
-            muertes = row.amount + 1;
-            db.prepare("UPDATE muertes SET amount = ? WHERE juego = ?").run(muertes, juego);
+        if (!row) {
+            this.comfy.Say(`${user}, no hay muertes en ese juego... ¿Incluso acaso es un juego eso?`);
+            return;
         }
 
-        this.comfy.Say(`${command_content.user}, se ha sumado una muerte en ${juego} a Recery. ¡Ahora tiene ${muertes} muertes!`);
-
+        this.comfy.Say(`${command_content.user}, ¡Recery tiene ${row.muertes} en ${juego}!`);
     }
 }
 
