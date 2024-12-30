@@ -5,7 +5,7 @@ const timed_message = require("./Scripts/TimedMessage.js");
 
 ComfyJS.onCommand = (user, activator, msg, flags, extra) => {
     let command_content = {user: user, activator: activator, msg: msg, flags: flags, extra: extra};
-
+    
     const urlRegex = /(https?:\/\/[^\s]+)/g;
     if (urlRegex.test(msg))
     {
