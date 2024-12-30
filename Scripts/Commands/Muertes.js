@@ -8,7 +8,7 @@ class Muertes extends Command
         if (!command_content.flags.broadcaster && !command_content.flags.mod) return;
 
         let muertes = 1;
-        const juego = command_content.message;
+        const juego = command_content.msg;
 
         const db = new DB(process.env.CONTADORES_DB_PATH);
         const row = db.prepare("SELECT amount FROM muertes WHERE juego = ?").get(juego);
