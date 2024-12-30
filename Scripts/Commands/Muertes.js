@@ -22,7 +22,7 @@ class Muertes extends Command
             return;
         }
 
-        this.comfy.Say(`${user}, ¡Recery tiene ${row.amount} en ${juego}!`);
+        this.comfy.Say(`${user}, ¡Recery tiene ${row.amount} muertes en ${juego}!`);
     }
 }
 
