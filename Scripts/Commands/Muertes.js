@@ -17,7 +17,7 @@ class Muertes extends Command
         const row = db.prepare("SELECT amount FROM muertes WHERE juego = ?").get(juego);
 
         if (!row) {
-            this.comfy.Say(`${user}, no hay muertes en ese juego... ¿Incluso acaso es un juego eso?`);
+            this.comfy.Say(`${command_content.user}, no hay muertes en ese juego... ¿Incluso acaso es un juego eso?`);
             return;
         }
 
