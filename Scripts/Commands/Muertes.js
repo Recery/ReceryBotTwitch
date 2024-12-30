@@ -8,7 +8,12 @@ class Muertes extends Command
         if (!command_content.flags.broadcaster && !command_content.flags.mod) return;
 
         let muertes = 1;
-        const juego = command_content.msg;
+        const juego = command_content.msg.toLowerCase();
+
+        if (!juego) {
+            this.comfy.Say(`${user}, debes ingresar el juego al que sumarle una muerte...`);
+            return;
+        } 
 
         const db = new DB(process.env.CONTADORES_DB_PATH);
         const row = db.prepare("SELECT amount FROM muertes WHERE juego = ?").get(juego);
@@ -20,7 +25,7 @@ class Muertes extends Command
             db.prepare("UPDATE muertes SET amount = ? WHERE juego = ?").run(muertes, juego);
         }
 
-        this.comfy.Say(`${command_content.user}, se ha sumado una muerte en ${juego} a Recery. ¡Ahora tiene ${muertes}!`);
+        this.comfy.Say(`${command_content.user}, se ha sumado una muerte en ${juego} a Recery. ¡Ahora tiene ${muertes} muertes!`);
 
     }
 }
