@@ -1,4 +1,4 @@
-const Command = require("./command_cls.js")
+const Command = require("./command_cls.js");
 
 class Adios extends Command
 {
