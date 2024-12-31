@@ -4,6 +4,7 @@ const Command = require("./command_cls.js");
 class Titulo extends Command
 {
     async execution(command_content) {
+        return;
         const newTitle = command_content.msg;
         if (!newTitle) return;
         
@@ -12,7 +13,7 @@ class Titulo extends Command
             method: "PATCH", 
             headers: {
                 "Client-ID": "1xsyw6xxzqdxpp5skdxxm9wxxxtfcyyo",
-                "Authorization": `Bearer ${process.env.TOKEN}`,
+                "Authorization": `Bearer ${process.env.TOKEN_RECERY}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
