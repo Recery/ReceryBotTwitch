@@ -49,7 +49,7 @@ ComfyJS.onRaid = (user, viewers, extra) => {
 ComfyJS.onConnected = (address, port, isFirstConnect) => {
     if (!isFirstConnect) return;
     
-    const text = "Soy Recery Bot y estoy acá para hacerle el trabajo a mi papá Recery... Si querés conocer mis comandos, escribí !comandos. Usa !redes para apoyar a mi papá por todos lados.";
+    const text = "Soy Recery Bot y estoy acá para hacerle el trabajo a mi papá Recery... Si querés conocer mis comandos, escribí !comandos. Usa !redes para apoyar a mi papá por todos lados. Únete a nuestro servidor de Discord, el estanque de Recery: https://discord.gg/npqD8GGW";
     timed_message.timed_message(text, 1800000);
 }
 
