@@ -8,4 +8,4 @@ class Discord extends Command
     }
 }
 
-module.exports = new Lurk("lurk");
+module.exports = new Lurk("discord");
